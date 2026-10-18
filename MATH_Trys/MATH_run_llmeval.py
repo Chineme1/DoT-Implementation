@@ -19,8 +19,7 @@ import numpy as np
 import openai
 from tqdm import tqdm
 
-sys.path.append('C:\\Users\\Pluto\\Desktop\\TaDe')
-from MATH_Trys.MATH_utils import *
+from MATH_utils import *
 from utils import *
 
 os.environ["http_proxy"] = "http://localhost:7890"
@@ -55,8 +54,8 @@ if __name__ == '__main__':
     success_Q = 0
     unsuccess_Q = 0
     error_Q = 0
-    N = 100
-    MAX_TRY = 5  # 错误尝试最大值
+    N = 1
+    MAX_TRY = 1  # 错误尝试最大值
     question_ids = list(range(N))
     
     # 选择问题

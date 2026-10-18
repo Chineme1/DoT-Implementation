@@ -1,7 +1,6 @@
 import sys
 from collections import defaultdict, deque
 
-sys.path.append('C:\\Users\\Pluto\\Desktop\\TaDe')
 import re
 from typing import Any, List
 
@@ -36,7 +35,11 @@ To solve the question "xxx", we need to know:
 "3. question step 3".
 ...
 """
-
+    #SLMC
+    #In the decompose sql function
+    #This is where the decomposition is done
+    #It is done by the 
+    print("In the decompose SQL function.")
     Q = {
         "role": "user",
         "content": prompt_for_decompose
@@ -44,7 +47,9 @@ To solve the question "xxx", we need to know:
     # Query = Example+[Q]
     Query = [Q]
     # result = askChatGPT(Query, model=GPT_MODEL, temperature=1)
+    #print("Query: ", Query)
     result = askLLM(clients, Query, tokens_path=config['tokens_path'], model=config['decompose_MODEL'], temperature=1)
+    print("This is the result of decompose sql", result)
     return result
 
 
@@ -67,10 +72,13 @@ def convert_steps_to_format(decom_commands):
 
 def construct_dependencies_without_traversal(clients, question, steps, config):
     # 这里的steps只是一个list
-    
+    print("SLMC In the construct dependencies graph traversal")
+
     connect_system = {"role": "system", "content": """Now we have a math problem, which we have broken down into many sub-problems. I want you to understand the connection between these sub-problems."""}
     connect_user = {"role": "user", "content":f"The init math problem is {question}. And the sub-problems are {steps}. Please provide your understanding of the relationships between these sub-problems. Your response must be concise."}
     connect_Q = [connect_system, connect_user]
+    # print("Connect user: ", connect_user) #SLMC This gives the user and the breakdown of the question. This gives the connection that each question has
+    # print("\n\nSLMC connect Q: ", connect_Q) #SLMC this is the question that is passed to the LLM
     # connect_commands = askChatGPT(connect_Q, model=GPT_MODEL, temperature = 1)
     connect_commands = askLLM(clients, connect_Q, tokens_path=config['tokens_path'], model=config['dependencies_1_MODEL'], temperature=1)
     # print('LLM对于subcommands之间关系的语言理解:\n\n', connect_commands)
@@ -93,6 +101,8 @@ Step id_i [ sub-problem i ] -> Step id_j [ sub-problem j ]
 Step id_m [ sub-problem m ] -> Step id_n [ sub-problem n ]
 ...
 """
+
+    print("SLMC Prompt: ",prompt)
     prompt_user = {
         "role": "user",
         "content": f"""{prompt}"""
@@ -212,7 +222,7 @@ def remove_quotes(s: str) -> str:
     
 
 
-def AllocateModel(clients, question, steps, config):
+def AllocateModel(clients, question, steps, config):  
     # 在这里就进行分配,确定用哪个大语言模型来解决问题
     # 一次性对所有的子任务分配MODEL
     # Below are some examples of model assignments based on the difficulty of the problems themselves.
@@ -232,6 +242,9 @@ Output format: (No additional explanations or comments are needed. Please strict
     ...
 ]
 """}]
+    #SLMC
+    #This is the allocation model
+    print("This is the allocate model.")
     # allo_model = askChatGPT(allo_Q, model=config['allocation_MODEL'], temperature=1)  # 询问大语言模型这个子任务应该使用什么样的模型来完成
     allo_model = askLLM(clients, allo_Q, tokens_path=config['tokens_path'], model=config['allocation_MODEL'], temperature=1)
     # print('allocate model to each:\n')
