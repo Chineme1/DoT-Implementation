@@ -193,8 +193,9 @@ No explanation is required.
                     success = True  # 任务未受中断,完整地结束了,所以标记为成功                       
                 
             except:
-                attempts += 1  # 如果在执行过程中报错中止,还有重做的机会
-                logger.info(f"error: {attempts};  taskid: {question_id}")  # 生成过程出错了
+                import traceback; traceback.print_exc()
+                attempts += 1
+                logger.info(f"error: {attempts};  taskid: {question_id}")
         
         if attempts == MAX_TRY:
             error_Q += 1

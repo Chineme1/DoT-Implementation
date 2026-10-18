@@ -252,6 +252,7 @@ Output format: (No additional explanations or comments are needed. Please strict
     # print('\n')
     allo_model = eval(allo_model)
     allo_model = {index+1: tup[2] for index, tup in enumerate(allo_model)}  # 这里的index需要和steps_dict保持一致,从1开始.
+    print("Allocate Model: ",allo_model)
     return allo_model
 
 

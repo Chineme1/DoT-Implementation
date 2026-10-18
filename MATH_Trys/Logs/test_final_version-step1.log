@@ -1254,3 +1254,244 @@ Error_Q: 1
 
 Total Tokens: 1623
 Total Cost: $0.01
+
+
+
+
+number id: 0
+problem content:
+
+Three semicircles of radius 1 are constructed on diameter $\overline{AB}$ of a semicircle of radius 2. The centers of the small semicircles divide $\overline{AB}$  into four line segments of equal length, as shown. What is the area of the shaded region that lies  within the large semicircle but outside the smaller semicircles? Express your answer in terms of $\pi$ and in simplest radical form.
+
+[asy]
+fill((0,2)..(2,0)--(-2,0)..cycle,gray(0.7));
+fill((-1,1)..(0,0)--(-2,0)..cycle,white);
+fill((1,1)..(0,0)--(2,0)..cycle,white);
+fill((0,1)..(1,0)--(-1,0)..cycle,white);
+draw((0,1)..(1,0)--(-1,0)..cycle,dashed);
+draw((0,2)..(2,0)--(-2,0)..cycle);
+label("$A$",(-2,0),W);
+label("$B$",(2,0),E);
+label("1",(-1.5,0),S);
+label("2",(0,0),S);
+label("1",(1.5,0),S);
+dot((0,0));
+dot((-1,0));
+dot((1,0));
+draw((-2,-0.1)--(-2,-0.4));
+draw((-1,-0.1)--(-1,-0.4));
+draw((2,-0.1)--(2,-0.4));
+draw((1,-0.1)--(1,-0.4));
+[/asy]
+error: 1;  taskid: 0
+run error 1+
+100 solving 运行耗时: 0.0h, 0.0min, 7.785110950469971s
+
+Tokens/token_usage_2026-10-18-10-45-24.json
+Correct_Q: 0
+False_Q: 0
+Error_Q: 1
+
+Total Tokens: 2999
+Total Cost: $0.01
+
+
+
+
+number id: 0
+problem content:
+
+Three semicircles of radius 1 are constructed on diameter $\overline{AB}$ of a semicircle of radius 2. The centers of the small semicircles divide $\overline{AB}$  into four line segments of equal length, as shown. What is the area of the shaded region that lies  within the large semicircle but outside the smaller semicircles? Express your answer in terms of $\pi$ and in simplest radical form.
+
+[asy]
+fill((0,2)..(2,0)--(-2,0)..cycle,gray(0.7));
+fill((-1,1)..(0,0)--(-2,0)..cycle,white);
+fill((1,1)..(0,0)--(2,0)..cycle,white);
+fill((0,1)..(1,0)--(-1,0)..cycle,white);
+draw((0,1)..(1,0)--(-1,0)..cycle,dashed);
+draw((0,2)..(2,0)--(-2,0)..cycle);
+label("$A$",(-2,0),W);
+label("$B$",(2,0),E);
+label("1",(-1.5,0),S);
+label("2",(0,0),S);
+label("1",(1.5,0),S);
+dot((0,0));
+dot((-1,0));
+dot((1,0));
+draw((-2,-0.1)--(-2,-0.4));
+draw((-1,-0.1)--(-1,-0.4));
+draw((2,-0.1)--(2,-0.4));
+draw((1,-0.1)--(1,-0.4));
+[/asy]
+error: 1;  taskid: 0
+run error 1+
+100 solving 运行耗时: 0.0h, 0.0min, 6.884217262268066s
+
+Tokens/token_usage_2026-10-18-10-46-25.json
+Correct_Q: 0
+False_Q: 0
+Error_Q: 1
+
+Total Tokens: 3050
+Total Cost: $0.01
+
+
+
+
+number id: 0
+problem content:
+
+Three semicircles of radius 1 are constructed on diameter $\overline{AB}$ of a semicircle of radius 2. The centers of the small semicircles divide $\overline{AB}$  into four line segments of equal length, as shown. What is the area of the shaded region that lies  within the large semicircle but outside the smaller semicircles? Express your answer in terms of $\pi$ and in simplest radical form.
+
+[asy]
+fill((0,2)..(2,0)--(-2,0)..cycle,gray(0.7));
+fill((-1,1)..(0,0)--(-2,0)..cycle,white);
+fill((1,1)..(0,0)--(2,0)..cycle,white);
+fill((0,1)..(1,0)--(-1,0)..cycle,white);
+draw((0,1)..(1,0)--(-1,0)..cycle,dashed);
+draw((0,2)..(2,0)--(-2,0)..cycle);
+label("$A$",(-2,0),W);
+label("$B$",(2,0),E);
+label("1",(-1.5,0),S);
+label("2",(0,0),S);
+label("1",(1.5,0),S);
+dot((0,0));
+dot((-1,0));
+dot((1,0));
+draw((-2,-0.1)--(-2,-0.4));
+draw((-1,-0.1)--(-1,-0.4));
+draw((2,-0.1)--(2,-0.4));
+draw((1,-0.1)--(1,-0.4));
+[/asy]
+error: 1;  taskid: 0
+run error 1+
+100 solving 运行耗时: 0.0h, 0.0min, 2.2102530002593994s
+
+Tokens/token_usage_2026-10-18-10-49-32.json
+Correct_Q: 0
+False_Q: 0
+Error_Q: 1
+
+Total Tokens: 1564
+Total Cost: $0.01
+
+
+
+
+number id: 0
+problem content:
+
+Three semicircles of radius 1 are constructed on diameter $\overline{AB}$ of a semicircle of radius 2. The centers of the small semicircles divide $\overline{AB}$  into four line segments of equal length, as shown. What is the area of the shaded region that lies  within the large semicircle but outside the smaller semicircles? Express your answer in terms of $\pi$ and in simplest radical form.
+
+[asy]
+fill((0,2)..(2,0)--(-2,0)..cycle,gray(0.7));
+fill((-1,1)..(0,0)--(-2,0)..cycle,white);
+fill((1,1)..(0,0)--(2,0)..cycle,white);
+fill((0,1)..(1,0)--(-1,0)..cycle,white);
+draw((0,1)..(1,0)--(-1,0)..cycle,dashed);
+draw((0,2)..(2,0)--(-2,0)..cycle);
+label("$A$",(-2,0),W);
+label("$B$",(2,0),E);
+label("1",(-1.5,0),S);
+label("2",(0,0),S);
+label("1",(1.5,0),S);
+dot((0,0));
+dot((-1,0));
+dot((1,0));
+draw((-2,-0.1)--(-2,-0.4));
+draw((-1,-0.1)--(-1,-0.4));
+draw((2,-0.1)--(2,-0.4));
+draw((1,-0.1)--(1,-0.4));
+[/asy]
+error: 1;  taskid: 0
+run error 1+
+100 solving 运行耗时: 0.0h, 0.0min, 5.980388641357422s
+
+Tokens/token_usage_2026-10-18-10-50-35.json
+Correct_Q: 0
+False_Q: 0
+Error_Q: 1
+
+Total Tokens: 2877
+Total Cost: $0.01
+
+
+
+
+number id: 0
+problem content:
+
+Three semicircles of radius 1 are constructed on diameter $\overline{AB}$ of a semicircle of radius 2. The centers of the small semicircles divide $\overline{AB}$  into four line segments of equal length, as shown. What is the area of the shaded region that lies  within the large semicircle but outside the smaller semicircles? Express your answer in terms of $\pi$ and in simplest radical form.
+
+[asy]
+fill((0,2)..(2,0)--(-2,0)..cycle,gray(0.7));
+fill((-1,1)..(0,0)--(-2,0)..cycle,white);
+fill((1,1)..(0,0)--(2,0)..cycle,white);
+fill((0,1)..(1,0)--(-1,0)..cycle,white);
+draw((0,1)..(1,0)--(-1,0)..cycle,dashed);
+draw((0,2)..(2,0)--(-2,0)..cycle);
+label("$A$",(-2,0),W);
+label("$B$",(2,0),E);
+label("1",(-1.5,0),S);
+label("2",(0,0),S);
+label("1",(1.5,0),S);
+dot((0,0));
+dot((-1,0));
+dot((1,0));
+draw((-2,-0.1)--(-2,-0.4));
+draw((-1,-0.1)--(-1,-0.4));
+draw((2,-0.1)--(2,-0.4));
+draw((1,-0.1)--(1,-0.4));
+[/asy]
+error: 1;  taskid: 0
+run error 1+
+100 solving 运行耗时: 0.0h, 0.0min, 5.379894256591797s
+
+Tokens/token_usage_2026-10-18-10-54-10.json
+Correct_Q: 0
+False_Q: 0
+Error_Q: 1
+
+Total Tokens: 2910
+Total Cost: $0.01
+
+
+
+
+number id: 0
+problem content:
+
+Three semicircles of radius 1 are constructed on diameter $\overline{AB}$ of a semicircle of radius 2. The centers of the small semicircles divide $\overline{AB}$  into four line segments of equal length, as shown. What is the area of the shaded region that lies  within the large semicircle but outside the smaller semicircles? Express your answer in terms of $\pi$ and in simplest radical form.
+
+[asy]
+fill((0,2)..(2,0)--(-2,0)..cycle,gray(0.7));
+fill((-1,1)..(0,0)--(-2,0)..cycle,white);
+fill((1,1)..(0,0)--(2,0)..cycle,white);
+fill((0,1)..(1,0)--(-1,0)..cycle,white);
+draw((0,1)..(1,0)--(-1,0)..cycle,dashed);
+draw((0,2)..(2,0)--(-2,0)..cycle);
+label("$A$",(-2,0),W);
+label("$B$",(2,0),E);
+label("1",(-1.5,0),S);
+label("2",(0,0),S);
+label("1",(1.5,0),S);
+dot((0,0));
+dot((-1,0));
+dot((1,0));
+draw((-2,-0.1)--(-2,-0.4));
+draw((-1,-0.1)--(-1,-0.4));
+draw((2,-0.1)--(2,-0.4));
+draw((1,-0.1)--(1,-0.4));
+[/asy]
+finalResult: 
+The area of the shaded region is \(\frac{1}{2} \pi\).
+error
+100 solving 运行耗时: 0.0h, 0.0min, 9.390645980834961s
+
+Tokens/token_usage_2026-10-18-10-58-46.json
+Correct_Q: 0
+False_Q: 1
+Error_Q: 0
+
+Total Tokens: 6104
+Total Cost: $0.02

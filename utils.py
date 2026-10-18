@@ -283,7 +283,7 @@ def allbest_allocation(n):
     return selection
 
 def random_model_selection(n):
-    models = ['gpt-4', 'gpt-4-turbo', 'gpt-3.5-turbo', 'gpt-4o-mini', 'llama3-70b', 'llama3-8b', 'llama3:8b', 'llama3.1:8b']
+    models = ['gpt-4', 'gpt-4-turbo', 'gpt-3.5-turbo', 'gpt-4o-mini', 'llama3-8b', 'llama3:8b', 'llama3.1:8b']
     selection = {i + 1: random.choice(models) for i in range(n)}
     return selection
 
