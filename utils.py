@@ -26,6 +26,8 @@ def askLLM(clients, messages, tokens_path, model="gpt-3.5-turbo", temperature = 
     
     if model in ['gpt-4', 'gpt-4-turbo', 'gpt-3.5-turbo', 'gpt-4o-mini', 'gpt-4o']: # GPT系列模型调用           
         client = clients['gpt']  # gpt系列共用一个client
+        print("SLMC GPT In here")
+        #print("model: ", model)
         response = client.chat.completions.create(
                 model = 'gpt-4o',
                 messages = messages,
@@ -36,8 +38,9 @@ def askLLM(clients, messages, tokens_path, model="gpt-3.5-turbo", temperature = 
         update_token_usage(model, response.usage.prompt_tokens, response.usage.completion_tokens, file_path=tokens_path)
         answer = response.choices[0].message.content
         
-    elif model in ['llama3-70b', 'llama3-8b']:
+    elif model in ['llama3-70b', 'llama3-8b', 'llama3.1:8b']:
         client = clients['llama']  # llama系列共用一个client
+        print("SLMC llama In here")
         response = client.chat.completions.create(
                 model = model, 
                 messages = messages,
@@ -59,6 +62,7 @@ def askLLM_withprob(clients, messages, tokens_path, model="gpt-3.5-turbo", tempe
     probs = {}
     if model in ['gpt-4', 'gpt-4-turbo', 'gpt-3.5-turbo', 'gpt-4o-mini']: # GPT系列模型调用           
         client = clients['gpt']  # gpt系列共用一个client
+        print("In the GPT models: ")
         response = client.chat.completions.create(
                 model = model,
                 messages = 'gpt-4o',
@@ -76,8 +80,9 @@ def askLLM_withprob(clients, messages, tokens_path, model="gpt-3.5-turbo", tempe
             # 在这一步就把logprob用e指数返回成prob
             probs[item.token] = math.exp(item.logprob)
         
-    elif model in ['llama3-70b', 'llama3-8b']:
+    elif model in ['llama3-70b', 'llama3-8b', 'llama3.1:8b']:
         client = clients['gpt']  # 这里需要改成llama系列的prompts  # TODO 还没拿到LLaMA的key, 所以先拿gpt-3.5充当.
+        print("In the Local Llama models: ")
         response = client.chat.completions.create(
                 model = "gpt-3.5-turbo",  # TODO 还没拿到LLaMA的key, 所以先拿gpt-3.5充当.
                 messages = messages,
@@ -120,7 +125,6 @@ def update_token_usage(model_name, prompt_tokens, completion_tokens, file_path='
     # 将更新后的数据写回文件
     with open(file_path, 'w') as f:
         json.dump(data, f, indent=4)
-
  
 def addtoken(num):
     try:
@@ -141,16 +145,27 @@ def addtoken(num):
     
 def setOpenAi(keyid = 0):
     # set your openai key here.
-    if keyid == 0:
+    """if keyid == 0:
         api_key = ""
+    client = OpenAI(api_key=api_key)
+    addtoken(-1)"""
+
+    api_key = ""
+    
+    if not api_key:
+        raise RuntimeError(
+            "OPENAI_API_KEY is not set. "
+            "Export your OpenAI API key before running the benchmark."
+        )
+
     client = OpenAI(api_key=api_key)
     addtoken(-1)
     return client
 
 def setLocal():
     client = OpenAI(
-        api_key="EMPTY",
-        base_url="your llm deploy url",
+        api_key="ollama",
+        base_url="http://localhost:11434/v1",
     )
     return client
 
@@ -268,7 +283,7 @@ def allbest_allocation(n):
     return selection
 
 def random_model_selection(n):
-    models = ['gpt-4', 'gpt-4-turbo', 'gpt-3.5-turbo', 'gpt-4o-mini', 'llama3-70b', 'llama3-8b']
+    models = ['gpt-4', 'gpt-4-turbo', 'gpt-3.5-turbo', 'gpt-4o-mini', 'llama3-70b', 'llama3-8b', 'llama3:8b', 'llama3.1:8b']
     selection = {i + 1: random.choice(models) for i in range(n)}
     return selection
 
@@ -491,5 +506,4 @@ def find_first_valid_key2(lst, dictx):
 
 if __name__ == '__main__':
     lst = [1,2,3,4,5,6,7,8,9,10]
-    print(quantile(lst, 0.2)) 
-
+    print(quantile(lst, 0.2))
